@@ -1,5 +1,6 @@
 package top.sidian123.spring_security_demo;
 
+import io.jsonwebtoken.Jwts;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

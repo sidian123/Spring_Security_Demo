@@ -1,5 +1,7 @@
 package top.sidian123.spring_security_demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
+
+    @Autowired
+
+
     @GetMapping("/user")
     public String getUser(){
         return "没有用户,啦啦啦啦";
@@ -20,6 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/")
+    @Secured("ROLE_USER")
     public String home(){
         return "首页";
     }
