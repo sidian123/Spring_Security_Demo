@@ -40,7 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             //验证token是否成功
             if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {//验证成功
-                User user = tokenProvider.getUserFromJWT(jwt);
+                AuthUser user = tokenProvider.getUserFromJWT(jwt);
 
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user.getUsername(), null, user.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
